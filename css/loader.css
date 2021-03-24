@@ -1,0 +1,190 @@
+  /* latin */
+  @font-face {
+    font-family: 'Oi';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/oi/v3/w8gXH2EuRptdsN8.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+body{
+    margin: 0;
+}
+#full,#exit-full{
+    position: fixed;
+    top: 2px;
+    right: 2px;
+    width: 20px;
+    height: 20px;
+    z-index: 30;
+}
+#full:hover,#exit-full:hover{
+    cursor: pointer;
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+#exit-full{
+    display: none;
+}
+#exit-full.done{
+    display: block;
+}
+#full.done{
+    display: none;
+}
+
+#loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+    radial-gradient(circle at 100% 150%, rgb(121, 182, 121) 40%, transparent 40%, transparent),
+    radial-gradient(circle at 0 150%, rgb(121, 182, 121) 40%, transparent 40%, transparent),
+    radial-gradient(circle at 50% 100%, rgb(88, 117, 88) 71%, transparent 71%,   transparent),
+    radial-gradient(circle at 100% 50%, rgb(121, 182, 121) 49%, transparent 50%,  transparent),
+    radial-gradient(circle at 0 50%, rgb(121, 182, 121) 49%, transparent 50%, transparent);
+    background-repeat: repeat;
+    background-size: 50px 25px;
+    z-index: 18;
+    transition: 1s all;
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#boxPreload.done{
+    opacity: 0;
+    visibility: hidden;
+}
+#boxPreload.not{
+    display: none;
+}
+#buttons-rec-aud{
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    align-items: center;
+    transition: 1s all ease-in-out 0.3s;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 200px;
+}
+#buttons-rec-aud.done{
+    opacity: 1;
+}
+   #button-record,#button-audio{
+    margin: 10px auto;
+    text-align: center;
+   }
+   
+   #button-record:hover,#button-audio:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+    #audio-off{
+        display: none;
+    }
+    #audio-off.done{
+        display: block;
+    }
+    #audio-on.done{
+        display: none;
+    }
+
+#loader.done{
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+}
+
+    #logoGame{
+       font-family: 'Oi', cursive;
+       color: rgb(15, 97, 15);
+       font-size: 50px;
+       text-align: center;
+       letter-spacing: 5px;
+       text-shadow: 6px 2px 3px black;
+    }  
+    #boxPreload{
+        width: 200px;
+        height: 200px;
+        position: relative;
+        transition: 1s all;
+        opacity: 1;
+        visibility: visible; 
+        margin: auto;
+        animation: anim 2s infinite linear;
+    }
+        #boxPreload img{
+            width: 200px;
+            height: 200px;
+        }
+    @keyframes anim{
+       from{
+        transform: rotate(0deg);
+       }
+       to{
+        transform: rotate(360deg);
+       }
+            
+        
+    }
+
+
+    #cntue{
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: 2s all;
+    }
+        #cntue div{
+            width: 200px;
+            height: 50px;
+            border-radius: 20px;
+            background-color:rgb(15, 97, 15);
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Oi', cursive;
+            letter-spacing: 2px;
+        }
+        #cntue div:hover{
+            box-shadow: 2px 2px 10px black;
+            cursor: pointer;
+        }
+        #cntue.close{
+            opacity: 1;
+            visibility: visible;
+        }
+        #cntue.done{
+            display: none;
+        }
+
+        @media (max-width:800px){
+            #logoGame{
+                font-size: 30px;
+             }  
+             #boxPreload{
+                width: 100px;
+                height: 100px;
+            }
+                #boxPreload img{
+                    width: 100px;
+                    height: 100px;
+                }
+                #cntue div{
+                    width: 150px;
+                    height: 30px;
+                    font-size: 15px;
+                }
+        }
