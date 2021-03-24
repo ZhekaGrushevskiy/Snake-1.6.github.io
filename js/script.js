@@ -331,7 +331,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         context.textAlign = 'left';
         context.textBaseline = 'middle';
 
-        if (count == 0) {
+        if (count == 3) {
             // clearInterval(stopGame);
             clearTimeout(stopGame);
             setTimeout(function () {
